@@ -1,0 +1,21 @@
+server:
+  port: 2222
+
+spring:
+  application:
+    name: configServer
+  cloud:
+    config:
+      enabled: true
+      server:
+        svn:
+          uri: https://192.168.1.80/svn/cloudconfig/
+          username: zhouyi
+          password: zhouyi
+        default-label: config
+  profiles:
+    active: subversion
+
+logging:
+  levels:
+    org.springframework.cloud.config.server: INFO
